@@ -70,4 +70,8 @@ public class Student implements Serializable{
             return this.id+" "+this.name+" "+this.surname+" "+this.group+" "+this.GPA ;
             
         }
+        
+        public void aaaa(){
+    
+             }
 }
