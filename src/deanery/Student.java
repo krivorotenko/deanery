@@ -11,6 +11,10 @@ public class Student implements Serializable{
         private int group;
         private double GPA;
         
+        public Student(){
+            
+        }
+        
         
         public Student(int id, String name, String surname, int group, double GPA){
             this.id=id;
@@ -71,7 +75,22 @@ public class Student implements Serializable{
             
         }
         
-        public void aaaa(){
-    
-             }
+       @Override
+        public boolean equals(Object obj){
+          if (this==obj)
+              return true;
+           if (obj instanceof Student){
+               if ( ((Student)obj).getName().equals(this.getName()) &&
+                   ((Student)obj).getSurName().equals(this.getSurName()) && 
+                   ((Student)obj).getGroup()== this.getGroup() &&
+                   ((Student)obj).getGPA()== this.getGPA() ) {  return true;
+                                                             }
+               else {
+                     return false;
+                     }
+           
+           } else {
+                    return false;
+                   }
+        }
 }

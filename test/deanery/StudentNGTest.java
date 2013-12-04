@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 /**
  *
  * @author win7
@@ -22,6 +23,7 @@ public class StudentNGTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
+    Student A = new Student(1, "Alexandr", "Krivorotenko", 443, 4.5);
     }
 
     @AfterClass
@@ -59,7 +61,7 @@ public class StudentNGTest {
         Student instance = null;
         instance.setName(name);
         // Просмотр списка задач TODO для сгенерированного кода теста и удаление вызова по умолчанию для случаев сбоя.
-        fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
+        
     }
 
     /**

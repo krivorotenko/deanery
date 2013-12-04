@@ -1,0 +1,11 @@
+<hibernate-mapping>
+   <class name = "Deanery.Student" table = "student">
+     <id column="id_student" name="id" type="java.lang.Integer">
+	    <generator class="increment"/>
+	 </id>	 
+	 <property column="name" name="name" type="java.lang.String"/>
+	 <property column="surname" name="surname" type="java.lang.String"/>
+	 <property column="group" name="group" type="java.lang.Integer"/>
+	 <property column="GPA" name="GPA" type="java.lang.Double"/>
+	</class>
+</hibernate-mapping>

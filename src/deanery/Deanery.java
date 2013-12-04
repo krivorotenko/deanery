@@ -10,6 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Collections;
 import java.lang.Enum;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
@@ -271,7 +274,7 @@ public class Deanery {
        return result;
  } 
     
-    public static int findMaxID(ArrayList<Student> StudentsList){
+    /*public static int findMaxID(ArrayList<Student> StudentsList){
         int maxID=0;
         for(int i=0; i<StudentsList.size(); i++){
             if(StudentsList.get(i).getID() > maxID)
@@ -279,10 +282,10 @@ public class Deanery {
             }
         
         return maxID;
-    }
+    }*/
  
  
-public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, TransformerException {
+public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, TransformerException, SQLException {
       ArrayList<Student> StudentsList = new ArrayList<Student>();  
       ArrayList<Student> result = new ArrayList<Student>();  
       Scanner in= new Scanner(System.in);
@@ -290,7 +293,7 @@ public static void main(String[] args) throws FileNotFoundException, IOException
         int id=0; int group=0;  
         String name=""; String surName=""; double GPA=0;
         
-        
+           
       /*  for(int i=0; i<10; i++){
             System.out.println("Enter id:");
             id=in.nextInt();
@@ -331,21 +334,36 @@ public static void main(String[] args) throws FileNotFoundException, IOException
          
          
          //Deanery.createXML(StudentsList);
-         Deanery.readXML(StudentsList);
-         System.out.println("");
-         Deanery.showsAllStudents(StudentsList);
-         System.out.println("");
-         /*Deanery.FindByGroup(StudentsList);
-         System.out.println("");
-         Deanery.FindByName(StudentsList);
-         System.out.println("");
-         Deanery.FindBySurName(StudentsList);
-         System.out.println("");
-         Deanery.FindByID(StudentsList);*/
-         //Deanery.FindByGPA(StudentsList);
-         //Deanery.StudentsWithGPALess(StudentsList);
-         result = Deanery.studentsWithGPALess(StudentsList, 4.2);
-         Deanery.showsAllStudents(result);
+        // Deanery.readXML(StudentsList);
+        // System.out.println("");
+        // Deanery.showsAllStudents(StudentsList);
+        // System.out.println("");
          
+         //result = Deanery.studentsWithGPALess(StudentsList, 4.2);
+         //Deanery.showsAllStudents(result);
+         //Connection connect = DB.dbCreateConnection();
+         ResultSet requestResult = DB.showTableStudent();
+         //DB.addNewStudent("Olga", "Eeeee", 3.5, 2);
+         //DB.deleteStudent(1);
+         //DB.updateStudentsGPA(3, 3.8);
+         //requestResult = 
+          DB.showTableGroups();
+         //requestResult = 
+         //DB.sortStudentByField("name");
+         // DB.addGroup(421, "stationary");
+         requestResult = DB.sortStudentByField("name");
+         
+         String str = DB.printResultSet(requestResult);
+         System.out.println(str);
+         
+       //  Student st1  = new Student();
+       //  Student st2 = new Student();
+       //  Student st3 = new Student();
+       //  ArrayList<Student> arr = new ArrayList<Student>();
+       //  arr.add(st1);
+         
+         //arr.sortByName();
+         
+       
     }
 }
