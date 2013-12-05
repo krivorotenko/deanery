@@ -1,7 +1,11 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-     <class name = "Deanery.Groups" table = "groups">
+     <class name = "deanery.Groups" table = "groups">
 	    <id column="group" name="id" type="java.lang.Integer">
-	      <generator class="increment"/>
+	      <generator class="native"/>
 	    </id>
        <property column="group_number" name="groupNumber" type="java.lang.Integer"/>
        <property column="form_educ" name="formEduc" type="java.lang.String"/>

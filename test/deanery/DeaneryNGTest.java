@@ -48,7 +48,7 @@ public class DeaneryNGTest {
         String surName = "";
         int group = 0;
         double GPA = 0.0;
-        Deanery.addStudent(id, name, surName, group, GPA);
+//        Deanery.addStudent(id, name, surName, group, GPA);
         // Просмотр списка задач TODO для сгенерированного кода теста и удаление вызова по умолчанию для случаев сбоя.
         fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
@@ -224,7 +224,7 @@ public class DeaneryNGTest {
     /**
      * Тест метод findMaxID, класса Deanery.
      */
-    @Test
+   /* @Test
     public void testFindMaxID() {
         System.out.println("findMaxID");
         ArrayList<Student> StudentsList = null;
@@ -233,7 +233,7 @@ public class DeaneryNGTest {
         assertEquals(result, expResult);
         // Просмотр списка задач TODO для сгенерированного кода теста и удаление вызова по умолчанию для случаев сбоя.
         fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
-    }
+    }*/
 
     /**
      * Тест метод main, класса Deanery.

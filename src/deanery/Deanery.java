@@ -77,7 +77,7 @@ public class Deanery {
     
     public static void showsAllStudents(ArrayList<Student> StudentsList){
         for(int i=0; i<StudentsList.size(); i++){
-             System.out.println("ID: "+StudentsList.get(i).getID()+" Name: "+StudentsList.get(i).getName()+" Surname: "+StudentsList.get(i).getSurName()+" Group# " +StudentsList.get(i).getGroup()+" Student's GPA: "+StudentsList.get(i).getGPA());             
+             System.out.println("ID: "+StudentsList.get(i).getId()+" Name: "+StudentsList.get(i).getName()+" Surname: "+StudentsList.get(i).getSurname()+" Group# " +StudentsList.get(i).getGroup()+" Student's GPA: "+StudentsList.get(i).getGPA());             
          }  
     }
  
@@ -103,7 +103,7 @@ public class Deanery {
   
    // add attributes to student  
    Attr attribute = document.createAttribute("id");  
-   attribute.setValue(""+StudentsList.get(i).getID());  
+   attribute.setValue(""+StudentsList.get(i).getId());  
    xml.setAttributeNode(attribute);  
   
    // name element  
@@ -113,7 +113,7 @@ public class Deanery {
   
    // surname element  
    Element lastname = document.createElement("surname");  
-   lastname.appendChild(document.createTextNode(""+StudentsList.get(i).getSurName()));  
+   lastname.appendChild(document.createTextNode(""+StudentsList.get(i).getSurname()));  
    xml.appendChild(lastname);  
   
    // group elements  
@@ -194,7 +194,7 @@ public class Deanery {
       //----
      
       
-      StudentsList.add(new Student(id1, name, surName, group, GPA));
+      StudentsList.add(new Student(/*id1, */name, surName, group, GPA));
       
     } 
     
@@ -219,7 +219,7 @@ public class Deanery {
     public static ArrayList<Student> findByID(ArrayList<Student> StudentsList, int id){
       ArrayList<Student>result= new ArrayList<Student>();
       for(int i=0; i<StudentsList.size(); i++){
-         if (StudentsList.get(i).getID()==id)
+         if (StudentsList.get(i).getId()==id)
                         result.add(StudentsList.get(i));
      }    
       return result;
@@ -268,7 +268,7 @@ public class Deanery {
     public static ArrayList<Student> findBySurName(ArrayList<Student> StudentsList, String surName){
       ArrayList<Student>result= new ArrayList<Student>();
       for(int i=0; i<StudentsList.size(); i++){
-         if (surName.equals(StudentsList.get(i).getSurName()))
+         if (surName.equals(StudentsList.get(i).getSurname()))
                         result.add(StudentsList.get(i));
      }
        return result;
@@ -363,7 +363,12 @@ public static void main(String[] args) throws FileNotFoundException, IOException
        //  arr.add(st1);
          
          //arr.sortByName();
-         
+       Student a = new Student();
+       a.setName("sasha");
+       a.setSurname("krivorotenko");
+       a.setGPA(4.4);
+       a.setGroup(2);
+       Factory.getStudentDAO().addStudent(a);
        
     }
 }

@@ -20,7 +20,7 @@ public class Groups {
         this.formEduc="-----";
     }
     
-    public void setIdGroup(int idGroup){
+    public void setId(int idGroup){
           this.idGroup=idGroup;    
       }
     
@@ -32,7 +32,7 @@ public class Groups {
        this.formEduc=formEduc;
    }
    
-   public int getIdGroup(){
+   public int getId(){
        return this.idGroup;
    }
     

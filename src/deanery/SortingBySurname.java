@@ -10,8 +10,8 @@ public class SortingBySurname implements Comparator<Student>{
 
     @Override
     public int compare(Student t, Student t1) {
-        String str1 = t.getSurName();
-        String str2 = t1.getSurName();
+        String str1 = t.getSurname();
+        String str2 = t1.getSurname();
         return str1.compareTo(str2);        
     }
     

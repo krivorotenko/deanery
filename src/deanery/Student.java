@@ -16,15 +16,15 @@ public class Student implements Serializable{
         }
         
         
-        public Student(int id, String name, String surname, int group, double GPA){
-            this.id=id;
+        public Student(String name, String surname, int group, double GPA){
+            //this.id=id;
             this.name=name;
             this.surname=surname;
             this.group=group;
             this.GPA=GPA;
            }
         
-        public void setID(int id1){
+        public void setId(int id1){
             
             id=id1;
         }
@@ -34,7 +34,7 @@ public class Student implements Serializable{
             this.name=name;
         }
         
-        public void setSurName(String Surname){
+        public void setSurname(String Surname){
             
             this.surname=Surname;
         }
@@ -49,7 +49,7 @@ public class Student implements Serializable{
             this.GPA=GPA;
         }
         
-        public int getID(){
+        public int getId(){
             return this.id;
         }
         
@@ -57,7 +57,7 @@ public class Student implements Serializable{
             return this.name;
         }
         
-        public String getSurName(){
+        public String getSurname(){
             return this.surname;
         }
         
@@ -81,7 +81,7 @@ public class Student implements Serializable{
               return true;
            if (obj instanceof Student){
                if ( ((Student)obj).getName().equals(this.getName()) &&
-                   ((Student)obj).getSurName().equals(this.getSurName()) && 
+                   ((Student)obj).getSurname().equals(this.getSurname()) && 
                    ((Student)obj).getGroup()== this.getGroup() &&
                    ((Student)obj).getGPA()== this.getGPA() ) {  return true;
                                                              }
