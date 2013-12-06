@@ -364,11 +364,13 @@ public static void main(String[] args) throws FileNotFoundException, IOException
          
          //arr.sortByName();
        Student a = new Student();
-       a.setName("sasha");
-       a.setSurname("krivorotenko");
+       a.setId(2);
+       a.setName("Vasia");
+       a.setSurname("Vorona");
        a.setGPA(4.4);
-       a.setGroup(2);
-       Factory.getStudentDAO().addStudent(a);
-       
+       a.setGroup(3);
+       //Factory.getStudentDAO().addStudent(a);
+       //Factory.getStudentDAO().updateStudentGPA(2, 4.4);
+       Factory.getStudentDAO().deleteStudent(a);
     }
 }
