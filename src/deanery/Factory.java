@@ -10,7 +10,7 @@ package deanery;
 public class Factory {
     private static StudentDAO studentDAO = null;
     private static Factory instance = null;
-    
+    private static GroupsDAO groupDAO = null;
     public static synchronized Factory getInstance(){
         if (instance == null){
             instance = new Factory();
@@ -18,6 +18,13 @@ public class Factory {
         return instance;
     }   
        
+    
+    public static GroupsDAO getGroupDAO(){
+        if(groupDAO == null)
+            groupDAO = new GroupsDAOImpl();
+        return groupDAO;
+    }
+    
     public static StudentDAO getStudentDAO(){
           if(studentDAO == null){
              studentDAO = new StudentDAOImpl(); 
@@ -25,6 +32,7 @@ public class Factory {
           return studentDAO;
        }
     
+   
     
     
 }

@@ -13,6 +13,8 @@ import java.lang.Enum;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.List;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
@@ -20,6 +22,7 @@ import javax.xml.transform.stream.*;
 import org.w3c.dom.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 public class Deanery {
     
@@ -364,13 +367,28 @@ public static void main(String[] args) throws FileNotFoundException, IOException
          
          //arr.sortByName();
        Student a = new Student();
-       a.setId(2);
-       a.setName("Vasia");
-       a.setSurname("Vorona");
-       a.setGPA(4.4);
-       a.setGroup(3);
+       Groups g = new Groups();
+       g.setId(5);
+       g.setGroupNumber(212);
+       g.setFormEduc("absentia");
+       //-----------
+       a.setId(3);
+       a.setName("Dmitriy");
+       a.setSurname("SpecR");
+       a.setGPA(4.6);
+       a.setGroup(2);
        //Factory.getStudentDAO().addStudent(a);
        //Factory.getStudentDAO().updateStudentGPA(2, 4.4);
-       Factory.getStudentDAO().deleteStudent(a);
+       //Factory.getStudentDAO().deleteStudent(a);
+       String s = new String();
+       Collection list = null;
+     //  s = Factory.getStudentDAO().getAllStudents();
+      // System.out.println(s);
+       list = Factory.getStudentDAO().getStudentByName(a);
+      // for(int i=0; i<list.size(); i++){
+      System.out.println(list);
+      // Factory.getGroupDAO().deleteGroup(5);
+       
+       
     }
 }
