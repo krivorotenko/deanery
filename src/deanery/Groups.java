@@ -13,6 +13,7 @@ public class Groups {
     private int idGroup;
     private int groupNumber;
     private String formEduc;
+    private Student A;
     
     Groups(){
         this.idGroup=0;
@@ -44,6 +45,12 @@ public class Groups {
        return this.formEduc;
    }
 
-
+   public Student getStudent(){
+       return this.A;
+   }
+   
+   public void setStudent(Student stud){
+       this.A=stud;
+   }
 }
 

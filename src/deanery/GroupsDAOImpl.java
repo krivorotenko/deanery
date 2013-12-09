@@ -33,6 +33,7 @@ public class GroupsDAOImpl implements GroupsDAO{
     @Override
     public void deleteGroup(int groupID) throws SQLException {
        Session session = null;
+        String s = new String();
        try{
            session = HibernateUtil.getSessionFactory().openSession();
            session.getTransaction().begin();
@@ -49,6 +50,19 @@ public class GroupsDAOImpl implements GroupsDAO{
 
     @Override
     public void showGroups() throws SQLException {
+        Session session = null;
+         String s = new String();
+        try{
+           session = HibernateUtil.getSessionFactory().openSession();
+           session.getTransaction().begin();
+           Query query = session.createQuery("from Groups");
+               int result = query.executeUpdate();
+               session.getTransaction().commit();
+               //List list = query.list();
+               session.close();
+       }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Fail", JOptionPane.OK_OPTION);
+       }
         
     }
    

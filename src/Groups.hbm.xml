@@ -9,5 +9,9 @@
 	    </id>
        <property column="group_number" name="groupNumber" type="java.lang.Integer"/>
        <property column="form_educ" name="formEduc" type="java.lang.String"/>
+       <set name ="student" lazy="false">
+              <key column="id_group"/>
+              <one-to-many class="deanery.Student"/>
+       </set>
      </class>	   
 </hibernate-mapping>

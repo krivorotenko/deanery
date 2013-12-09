@@ -17,7 +17,7 @@ public class DB {
     try
     {
     String userName = "root";
-    String password = "";
+    String password = "root";
     String url = "jdbc:mysql://localhost:3306/Student"; 
     Class.forName ("com.mysql.jdbc.Driver").newInstance ();
     conn = DriverManager.getConnection (url, userName, password);

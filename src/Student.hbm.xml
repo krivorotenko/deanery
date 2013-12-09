@@ -11,5 +11,5 @@
 	 <property column="surname" name="surname" type="java.lang.String"/>
 	  <property column="GPA" name="GPA" type="java.lang.Double"/>
 	  <property column="id_group" name="group" type="java.lang.Integer"/>
-  </class>
+     </class>
 </hibernate-mapping>
