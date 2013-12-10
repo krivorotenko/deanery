@@ -19,7 +19,7 @@ public class StudentTest {
 
     @BeforeClass
     public  void setUpClass() throws Exception {
-         A = new Student(1, "Vasia","Vasyl", 443, 4.5);
+    //     A = new Student(1, "Vasia","Vasyl", 443, 4.5);
     }
 
     @AfterClass
@@ -42,7 +42,7 @@ public class StudentTest {
         System.out.println("setID");
         int id1 = 0;
         Student instance = null;
-        instance.setID(id1);
+      //  instance.setID(id1);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -68,7 +68,7 @@ public class StudentTest {
         System.out.println("setSurName");
         String Surname = "";
         Student instance = null;
-        instance.setSurName(Surname);
+        instance.setSurname(Surname);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -107,7 +107,7 @@ public class StudentTest {
         System.out.println("getID");
         Student instance = null;
         int expResult = 0;
-        int result = instance.getID();
+        int result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -135,7 +135,7 @@ public class StudentTest {
         System.out.println("getSurName");
         Student instance = null;
         String expResult = "";
-        String result = instance.getSurName();
+        String result = instance.getSurname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
